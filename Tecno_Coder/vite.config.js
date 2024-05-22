@@ -9,4 +9,9 @@ export default defineConfig({
       }
     }),
   ],
+  base: '/PreEntrega2-scapellato-/',
+  server: {
+    historyApiFallback: true 
+  }
 });
+
