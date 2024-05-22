@@ -20,7 +20,7 @@ function ItemDetail({ product }) {
   return (
     <div className="item-detail grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 bg-white rounded-xl shadow-md overflow-hidden w-full">
       <div className="item-detail-image">
-        <img src={`/images/${product.image}`} alt={product.title} className="w-full h-auto object-cover rounded-lg border-black border-4" /> 
+        <img src={`/PreEntrega2-scapellato-/images/${product.image}`} alt={product.title} className="w-full h-auto object-cover rounded-lg border-black border-4" /> 
       </div>
 
       <div className="item-detail-info p-4">
