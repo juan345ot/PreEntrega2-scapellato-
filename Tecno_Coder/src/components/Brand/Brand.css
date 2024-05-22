@@ -1,7 +1,5 @@
 .brand {
-  font-size: 1.5em;
   font-weight: bold;
-  margin-bottom: 1rem;
 }
 
 .brand-link {
@@ -12,4 +10,3 @@
 .coder {
   color: #6B7280;
 }
-

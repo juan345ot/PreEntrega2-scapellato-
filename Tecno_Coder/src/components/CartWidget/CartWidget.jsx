@@ -1,14 +1,17 @@
-import React from 'react';
-import './CartWidget.css';
+import React, { useContext } from 'react';
 import CartIcon from '../CartIcon/CartIcon';
+import { CartContext } from '../../context/CartContext';
 
 function CartWidget() {
-  const itemCount = 3;
+  const { cartItems } = useContext(CartContext);
 
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
   return (
-    <div className="flex items-center">
+    <div className="relative">
       <CartIcon width="40" height="40" />
-      <span className="text-xl md:text-2xl lg:text-3xl font-bold ml-2">{itemCount}</span>
+      <span className="absolute bottom-0 right-0 -mb-1 -mr-1 bg-red-500 text-white text-xs font-bold rounded-full px-1.5 py-0.5">
+        {totalQuantity}
+      </span>
     </div>
   );
 }
