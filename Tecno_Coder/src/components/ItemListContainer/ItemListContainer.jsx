@@ -10,12 +10,13 @@ function ItemListContainer({ greeting }) {
   const { categoryId } = useParams();
 
   useEffect(() => {
+    setLoading(true); // Agregar esto para mostrar el mensaje de carga
     const fetchProducts = async () => {
       try {
         const fetchedProducts = categoryId
           ? await getProductsByCategory(categoryId)
           : await getProducts();
-        setProducts(fetchedProducts); 
+        setProducts(fetchedProducts);
       } catch (error) {
         console.error('Error fetching products:', error);
       } finally {
@@ -23,8 +24,7 @@ function ItemListContainer({ greeting }) {
       }
     };
     fetchProducts();
-  }, [categoryId]);
-
+  }, [categoryId, setProducts]); // Agregar setProducts como dependencia
   const handleAdd = (quantity, product, setCount) => {
     addItem(product, quantity); 
     console.log(`Se agregaron ${quantity} unidades de ${product.title} al carrito`);
